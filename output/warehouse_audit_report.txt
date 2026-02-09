@@ -1,0 +1,1230 @@
+======================================================================
+仓库账单结构审计报告
+生成时间: 2026-02-07
+======================================================================
+
+======================================================================
+【FDM (澳洲)】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\澳洲\FDM
+文件数量: 14
+
+样本文件分析 (取前3个):
+
+  文件: 0704 picking list 付宏健自提.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['Serial Number\n', '  中文品名', 'Product name', 'SKU', 'FNSKU', 'Original ASIN', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Carton size', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³', 'FBA warehouse code']
+      数值列: ['Serial Number\n', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: 5.9澳大利亚备货数量清单-杨宏才-FDM到亚马逊自提.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['  中文品名', 'Product name', 'SKU', 'FNSKU', 'Original ASIN', '单个头程运费预估 180', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Carton size', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³', 'FBA ID']
+      数值列: ['单个头程运费预估 180', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: 6.18 picking list-carton-付宏健 自提.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['Serial Number\n', '  中文品名', 'Product name', 'SKU', 'FNSKU', 'Original ASIN', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Carton size', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³', 'FBA warehouse code']
+      数值列: ['Serial Number\n', 'Units Per Carton', 'Total Ctns', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+账单类型判定:
+  类型: D. 混合型账单（需进一步分析）
+
+成本可用性裁决:
+  月度成本汇总: ❌
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L2
+
+======================================================================
+【Sphere Freight (澳洲)】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\澳洲\sphere freight
+文件数量: 10
+
+样本文件分析 (取前3个):
+
+  文件: 5月SP到FBA 5.7 picking list-付宏健-亚马逊自提4托.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['  中文品名', 'Product name', 'SKU', 'FNSKU', 'Original ASIN', '单个头程 775', 'Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Carton size', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³', 'FBA warehouse code']
+      数值列: ['Pick  Qty', 'Units Per Carton', 'Total Ctns', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³', 'FBA warehouse code']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: 8.19杨宏才-Packing list-亚马逊自提.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['发货仓库', '  中文品名', 'Product name', 'SKU', 'FNSKU', 'Original ASIN', 'Pick  Qty', 'Unnamed: 7', 'Units Per Carton', 'Total Ctns', 'Carton size', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg', 'Total Vol/m³']
+      数值列: ['Pick  Qty', 'Unnamed: 7', 'Units Per Carton', 'Total Ctns', 'Unit Ctn Vol/m³', ' Unit Ctn Gw（kg）', 'Total Gw/kg']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: FDM提货到SPH  54托 1st Load Thrasio.xlsx
+    Sheets: ['first load不准确', '托盘清单', 'first load', 'Nutrilock', 'Thrasio', 'Nutrilock数量', 'Thrasio数量', 'Nutrilock Tfr', 'Thrasio Tfr']
+
+    [first load不准确]
+      列名: ['Item Key', 'SKU', 'Description', 'Expiry Date', 'Batch Ref.', 'Qty', 'Pallet', 'Location', 'comment', 'Pallet Total', 'Units Per Carton', 'Total Cartons']
+      数值列: ['Qty', 'Pallet Total', 'Units Per Carton', 'Total Cartons']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✓
+      有币种: ✗
+
+    [托盘清单]
+      列名: ['Item Key', 'SKU', 'Description', 'Expiry Date', 'Batch Ref.', 'Qty', 'Pallet', 'Location', 'comment', 'Pallet Total', 'Units Per Carton', 'Total Cartons']
+      数值列: ['Qty', 'Pallet Total', 'Units Per Carton', 'Total Cartons']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✓
+      有币种: ✗
+
+    [first load]
+      列名: ['ASIN', 'FN SKU', 'Discrp', 'Item Name', 'Quantity', '   per ctn', 'total carton']
+      数值列: ['Quantity', '   per ctn', 'total carton']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Nutrilock]
+      列名: ['Id', 'Facility', 'Snap Shot Date', 'Customer', 'Sku', 'Sku Description', 'Qty', 'FitStatus', 'Batch', 'Expiry date', 'Location', 'Length', 'Width', 'Height', 'Pallet Space Calculation']
+      数值列: ['Id', 'Qty', 'Length', 'Width', 'Height', 'Pallet Counted Bill', 'Standard Pallet - (upto 1.4m)', 'Standard Pallet - (upto 1.8m)']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✓
+      有币种: ✗
+
+    [Thrasio]
+      列名: ['Id', 'Facility', 'Snap Shot Date', 'Customer', 'Sku', 'Sku Description', 'Qty', 'FitStatus', 'Batch', 'Expiry date', 'Location', 'Length', 'Width', 'Height', 'Pallet Space Calculation']
+      数值列: ['Id', 'Qty', 'Batch', 'Expiry date', 'Length', 'Width', 'Height', 'Pallet Counted Bill']
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✗
+      有日期: ✓
+      有币种: ✗
+
+账单类型判定:
+  类型: D. 混合型账单（需进一步分析）
+
+成本可用性裁决:
+  月度成本汇总: ❌
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L2
+
+======================================================================
+【TSP】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\TSP
+文件数量: 64
+
+样本文件分析 (取前3个):
+
+  文件: Invoice - Hupper Tek Feb25 Wk2 - 18_02_2025 11_54_22 (1).xlsx
+    Sheets: ['Additional Invoice Items', 'Invoice Items', 'Invoiced Collections', 'Invoiced Returns', 'Invoiced GoodIns Items', 'Invoiced Storage Items']
+
+    [Additional Invoice Items]
+      列名: ['Client', 'Invoice Date', 'Invoice Item Type', 'Charge Type', 'Cost', 'Comments', 'Added By', 'Last Updated By User']
+      数值列: ['Cost']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoice Items]
+      列名: ['Client', 'Order', 'Country', 'Post Code', 'Tracking Number', 'Courier Service', 'Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost', 'Postage Cost', 'Rework Cost']
+      数值列: ['Tracking Number', 'Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Collections]
+      列名: ['Client', 'Invoice Date', 'Reference', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Returns]
+      列名: ['Client', 'Invoice Date', 'Order Number', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced GoodIns Items]
+      列名: ['Client', 'Invoice Date', 'ASN ID | POReference | Note', 'GoodsInType', 'Number Of Delivery Containers', 'Delivery Container Cost', 'Total Delivery Size Cost', 'Number Of Units', 'Cost Per Unit', 'Total Units Cost', 'Admin Cost', 'Number Of SKUS', 'Cost Per SKU', 'Total Skus Cost', 'Total Cost']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+  文件: Invoice - Hupper Tek Feb25 Wk3 - 26_02_2025 14_02_05.xlsx
+    Sheets: ['Additional Invoice Items', 'Invoice Items', 'Invoiced Collections', 'Invoiced Returns', 'Invoiced GoodIns Items', 'Invoiced Storage Items']
+
+    [Additional Invoice Items]
+      列名: ['Client', 'Invoice Date', 'Invoice Item Type', 'Charge Type', 'Cost', 'Comments', 'Added By', 'Last Updated By User']
+      数值列: ['Cost']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoice Items]
+      列名: ['Client', 'Order', 'Country', 'Post Code', 'Tracking Number', 'Courier Service', 'Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost', 'Postage Cost', 'Rework Cost']
+      数值列: ['Tracking Number', 'Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Collections]
+      列名: ['Client', 'Invoice Date', 'Reference', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Returns]
+      列名: ['Client', 'Invoice Date', 'Order Number', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced GoodIns Items]
+      列名: ['Client', 'Invoice Date', 'ASN ID | POReference | Note', 'GoodsInType', 'Number Of Delivery Containers', 'Delivery Container Cost', 'Total Delivery Size Cost', 'Number Of Units', 'Cost Per Unit', 'Total Units Cost', 'Admin Cost', 'Number Of SKUS', 'Cost Per SKU', 'Total Skus Cost', 'Total Cost']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+  文件: Invoice - Hupper Tek November 2024 Week 1 - 13_11_2024 09_28_00.xlsx
+    Sheets: ['Additional Invoice Items', 'Invoice Items', 'Invoiced Collections', 'Invoiced Returns', 'Invoiced GoodIns Items', 'Invoiced Storage Items']
+
+    [Additional Invoice Items]
+      列名: ['Client', 'Invoice Date', 'Invoice Item Type', 'Charge Type', 'Cost', 'Comments', 'Added By', 'Last Updated By User']
+      数值列: ['Cost']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoice Items]
+      列名: ['Client', 'Order', 'Country', 'Post Code', 'Tracking Number', 'Courier Service', 'Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost', 'Postage Cost', 'Rework Cost']
+      数值列: ['Weight - KG', 'Number of Item Picks', 'Number of Carton Picks', 'Number of Pallet Picks', 'Total Number Of Items', 'Number of Parcels', 'Picking Cost', 'Postage Cost']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Collections]
+      列名: ['Client', 'Invoice Date', 'Reference', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced Returns]
+      列名: ['Client', 'Invoice Date', 'Order Number', 'Cost', 'Comments']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [Invoiced GoodIns Items]
+      列名: ['Client', 'Invoice Date', 'ASN ID | POReference | Note', 'GoodsInType', 'Number Of Delivery Containers', 'Delivery Container Cost', 'Total Delivery Size Cost', 'Number Of Units', 'Cost Per Unit', 'Total Units Cost', 'Admin Cost', 'Number Of SKUS', 'Cost Per SKU', 'Total Skus Cost', 'Total Cost']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+账单类型判定:
+  类型: B. 出库/履约明细账单（含单号）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ⚠️ 可能
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L3
+
+======================================================================
+【京东】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\京东
+文件数量: 33
+
+样本文件分析 (取前3个):
+
+  文件: HupperTekCo.Limited_KH9220000002310_海外配送服务费-应收_2025-10-11_2025-10-20_BR1985014116657500160_2c27.xlsx
+    Sheets: ['汇总页', '明细_1']
+
+    [汇总页]
+      列名: [' ', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+      数值列: [' ']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [明细_1]
+      列名: ['费用类型\nType of Fee', '费用发生时间\nCost Incurred', '业务订单号\nTrace No.', '子线索号\nSub Clue Number', '付款对象编号\nPayer Account Number', '付款对象名称\nPayee Account Name', '收款对象编号\nReceipts Account No.', '收款对象名称\nReceipts Account', '产品\nPRODUCT', '计费项\nBilling Items', '仓库编码\nWarehouse Code', '报价币种\nQuotation Currency', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '折扣率\nDiscount Rate', '报价币种折扣金额\nCurrency of Quotation Discount Amount']
+      数值列: ['业务订单号\nTrace No.', '子线索号\nSub Clue Number', '收款对象编号\nReceipts Account No.', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '折扣率\nDiscount Rate', '报价币种折扣金额\nCurrency of Quotation Discount Amount', '税率\nTax Rate', '报价币种税额\nCurrency of Quotation Tax amount']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: HupperTekCo.Limited_KH9220000002310_海外配送服务费-应收_2025-12-10_2025-12-19_BR2007119829256998912_515.xlsx
+    Sheets: ['汇总页', '明细_1']
+
+    [汇总页]
+      列名: [' ', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+      数值列: [' ']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [明细_1]
+      列名: ['费用类型\nType of Fee', '费用发生时间\nCost Incurred', '业务订单号\nTrace No.', '子线索号\nSub Clue Number', '付款对象编号\nPayer Account Number', '付款对象名称\nPayee Account Name', '收款对象编号\nReceipts Account No.', '收款对象名称\nReceipts Account', '产品\nPRODUCT', '计费项\nBilling Items', '仓库编码\nWarehouse Code', '报价币种\nQuotation Currency', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '折扣率\nDiscount Rate', '报价币种折扣金额\nCurrency of Quotation Discount Amount']
+      数值列: ['业务订单号\nTrace No.', '子线索号\nSub Clue Number', '收款对象编号\nReceipts Account No.', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '折扣率\nDiscount Rate', '报价币种折扣金额\nCurrency of Quotation Discount Amount', '税率\nTax Rate', '报价币种税额\nCurrency of Quotation Tax amount']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: KH9220000002310_海外物流仓储服务费-全球_2025-10-01_2025-10-15_BR1979085385791279104_9b3484.xlsx
+    Sheets: ['汇总页', '出库', '在库']
+
+    [汇总页]
+      列名: [' ', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+      数值列: [' ']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [出库]
+      列名: ['费用类型\nType of Fee', '费用发生时间\nCost Incurred', '事件名称\nEvent', '计费产品\nBilling Product', '计费项\nBilling Items', '线索号\nClue Number', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '报价币种不含税金额\nQuoted Currency Amount Excluding Tax', '报价币种税额\nCurrency of Quotation Tax amount', '结算币种含税金额\nAmount of Settlement Currency(Tax Included)', '结算币种不含税金额\nSettlement Currency Amount Excluding Tax', '结算币种税额\nCurrency of Settlement Tax amount', '耗材数量\nQuantity of Materials', '计费体积\nBilling Volume', '体积\nVolume']
+      数值列: ['报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '报价币种不含税金额\nQuoted Currency Amount Excluding Tax', '报价币种税额\nCurrency of Quotation Tax amount', '结算币种含税金额\nAmount of Settlement Currency(Tax Included)', '结算币种不含税金额\nSettlement Currency Amount Excluding Tax', '结算币种税额\nCurrency of Settlement Tax amount', '耗材数量\nQuantity of Materials', '计费体积\nBilling Volume']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [在库]
+      列名: ['费用类型\nType of Fee', '费用发生时间\nCost Incurred', '事件名称\nEvent', '计费产品\nBilling Product', '计费项\nBilling Items', '线索号\nClue Number', '报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '报价币种不含税金额\nQuoted Currency Amount Excluding Tax', '报价币种税额\nCurrency of Quotation Tax amount', '结算币种含税金额\nAmount of Settlement Currency(Tax Included)', '结算币种不含税金额\nSettlement Currency Amount Excluding Tax', '结算币种税额\nCurrency of Settlement Tax amount', '耗材数量\nQuantity of Materials', '计费体积\nBilling Volume', '体积\nVolume']
+      数值列: ['报价币种含税金额\nAmount of Quotation Currency(Tax Included)', '报价币种不含税金额\nQuoted Currency Amount Excluding Tax', '报价币种税额\nCurrency of Quotation Tax amount', '结算币种含税金额\nAmount of Settlement Currency(Tax Included)', '结算币种不含税金额\nSettlement Currency Amount Excluding Tax', '结算币种税额\nCurrency of Settlement Tax amount', '耗材数量\nQuantity of Materials', '计费体积\nBilling Volume']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+账单类型判定:
+  类型: B. 出库/履约明细账单（含单号）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ⚠️ 可能
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L3
+
+======================================================================
+【海洋】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\海洋
+文件数量: 15
+
+样本文件分析 (取前3个):
+
+  文件: 2024.11.1-2024-12-05_CostBillExport837已对账（1504.306英镑）.xlsx
+    Sheets: ['CostBill']
+
+    [CostBill]
+      列名: ['NO', '单号', '参考号', '跟踪号', '业务类型', '运输方式', '费用类型', '仓库', '结算金额', '结算币种', '计费规则金额', '计费规则币种', '计费重', '计费时间', '备注']
+      数值列: ['NO', '结算金额', '计费规则金额', '计费重', '备注']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: 2025-2月_CostBillExport1090.xlsx
+    Sheets: ['CostBill']
+
+    [CostBill]
+      列名: ['NO', '单号', '参考号', '跟踪号', '状态', '核销状态', '业务类型', '运输方式', '费用类型', '仓库', '结算金额', '结算币种', '计费规则金额', '计费规则币种', '计费重']
+      数值列: ['NO', '核销状态', '结算金额', '计费规则金额', '计费重', '备注']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: 2025-4月_CostBillExport1299更新.xlsx
+    Sheets: ['CostBill']
+
+    [CostBill]
+      列名: ['NO', '单号', '参考号', '跟踪号', '状态', '核销状态', '业务类型', '运输方式', '费用类型', '仓库', '结算金额', '结算币种', '计费规则金额', '计费规则币种', '计费重']
+      数值列: ['NO', '核销状态', '结算金额', '计费规则金额', '计费重', '备注']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+账单类型判定:
+  类型: A. 月度费用汇总账单（无订单）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L1
+
+======================================================================
+【LHZ】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\LHZ
+文件数量: 9
+
+样本文件分析 (取前3个):
+
+  文件: 开票费用明细 01-2025 HUP xlsx.xlsx
+    Sheets: ['总计', '入库费用', '订单出库费用', 'FBA包裹出库', 'DPD 额外费用', 'DHL 额外费用', '额外操作费用', '仓租']
+
+    [总计]
+      列名: ['开票费用明细：HUP-Hupper', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [入库费用]
+      列名: ['日期', '入库单号', '入库费用', 'SKU数量', 'SKU种类费', 'SKU确认费', '货物数量', '分拣费', '物流费', '总计']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [订单出库费用]
+      列名: ['订单号', '包裹数量', '内件数量', '包裹操作费', '包裹重量', '物流方式', '国家', '运费', '总计']
+      数值列: ['包裹数量', '内件数量', '包裹操作费', '包裹重量', '运费', '总计']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [FBA包裹出库]
+      列名: ['订单号', '订单费', '包裹数量', '包裹操作费', '分拣数量', '分拣费', '贴标数量', '贴标费', 'DPD物流费', '总计']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [DPD 额外费用]
+      列名: ['INVOICENO', 'INVOICEDATE', 'SALESORG', 'CONTRACT_ACCOUNT', 'CONTRACT', 'PARCELNO', 'QUANTITY', 'QUANTITY_UNIT', 'DISCCOUNT', 'DISCLEVEL', 'PRODUCTNO', '费用', '项目', 'PRODUCTTEXT', 'PRODUCTGRP']
+      数值列: ['INVOICENO', 'SALESORG', 'CONTRACT_ACCOUNT', 'CONTRACT', 'PARCELNO', 'QUANTITY', 'DISCCOUNT', 'DISCLEVEL']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+  文件: 开票费用明细 02-2025 HUP xlsx.xlsx
+    Sheets: ['总计', '入库费用', '订单出库费用', 'FBA包裹出库', 'DPD 额外费用', 'DHL 额外费用', '额外操作费用', '仓租']
+
+    [总计]
+      列名: ['开票费用明细：HUP-Hupper', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [入库费用]
+      列名: ['日期', '入库单号', '入库费用', 'SKU数量', 'SKU种类费', 'SKU确认费', '货物数量', '分拣费', '物流费', '总计']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [订单出库费用]
+      列名: ['订单号', '包裹数量', '内件数量', '包裹操作费', '包裹重量', '物流方式', '国家', '运费', '总计']
+      数值列: ['包裹数量', '内件数量', '包裹操作费', '包裹重量', '运费', '总计']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [FBA包裹出库]
+      列名: ['订单号', '订单费', '包裹数量', '包裹操作费', '分拣数量', '分拣费', '贴标数量', '贴标费', 'DPD物流费', '总计']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [DPD 额外费用]
+      列名: ['INVOICENO', 'INVOICEDATE', 'SALESORG', 'CONTRACT_ACCOUNT', 'CONTRACT', 'PARCELNO', 'QUANTITY', 'QUANTITY_UNIT', 'DISCCOUNT', 'DISCLEVEL', 'PRODUCTNO', '费用', '项目', 'PRODUCTTEXT', 'PRODUCTGRP']
+      数值列: ['INVOICENO', 'SALESORG', 'CONTRACT_ACCOUNT', 'CONTRACT', 'PARCELNO', 'QUANTITY', 'DISCCOUNT', 'DISCLEVEL']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+  文件: 开票费用明细 05-2025 HUP xlsx.xlsx
+    Sheets: ['开票费用明细', '入库费用', '订单出库费用', 'FBA包裹出库', 'DPD 额外费用', 'DHL 额外费用', '额外操作费用', '仓租']
+
+    [开票费用明细]
+      列名: ['开票费用明细：HUP-Hupper', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [入库费用]
+      列名: ['日期', '入库单号', '入库费用', 'SKU数量', 'SKU种类费', 'SKU确认费', '货物数量', '分拣费', '物流费', '总计']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+    [订单出库费用]
+      列名: ['订单号', '包裹数量', '内件数量', '包裹操作费', '包裹重量', '物流方式', '国家', '运费', '总计']
+      数值列: ['包裹数量', '内件数量', '包裹操作费', '包裹重量', '运费', '总计']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [FBA包裹出库]
+      列名: ['订单号', '订单费', '包裹数量', '包裹操作费', '分拣数量', '分拣费', '贴标数量', '贴标费', 'DPD物流费', '总计']
+      数值列: ['订单费', '包裹数量', '包裹操作费', '分拣数量', '分拣费', '贴标数量', '贴标费', '总计']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [DPD 额外费用]
+      列名: ['INVOICENO', 'INVOICEDATE', 'SALESORG', 'CONTRACT_ACCOUNT', 'CONTRACT', 'PARCELNO', 'QUANTITY', 'QUANTITY_UNIT', 'DISCCOUNT', 'DISCLEVEL', 'PRODUCTNO', '费用', '项目', 'PRODUCTTEXT', 'PRODUCTGRP']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✗
+
+账单类型判定:
+  类型: B. 出库/履约明细账单（含单号）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ⚠️ 可能
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L3
+
+======================================================================
+【西邮】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\西邮
+文件数量: 6
+
+样本文件分析 (取前3个):
+
+  文件: AAB57--US--TEMU--西邮物流仓储账单--2025-06-01-2025-06-30--初版.xlsx
+    Sheets: ['汇总', '仓库明细', '仓租', '入库', '自发货', '转运', '增值费', '退货物流', '其他操作费用', '物流面单费', '库内索赔费用', '物流索赔费用', '物流补收']
+
+    [汇总]
+      列名: ['Unnamed: 0', '西邮美国海外仓账单汇总', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: ['Unnamed: 0']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [仓库明细]
+      列名: ['Unnamed: 0', '仓库明细费用\n(Warehouse Charges Details)', '月份(Month)', '仓库(Warehouse)', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      数值列: ['Unnamed: 0', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [仓租]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [入库]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [自发货]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: AAB57--US--TEMU--西邮物流仓储账单--2025.07.01-2025.07.31--初版.xlsx
+    Sheets: ['汇总', '仓库明细', '仓租', '入库', '自发货', '转运', '增值费', '退货物流', '其他操作费用', '物流面单费', '库内索赔费用', '物流索赔费用', '物流补收']
+
+    [汇总]
+      列名: ['Unnamed: 0', '西邮美国海外仓账单汇总', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: ['Unnamed: 0']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [仓库明细]
+      列名: ['Unnamed: 0', '仓库明细费用\n(Warehouse Charges Details)', '月份(Month)', '仓库(Warehouse)', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      数值列: ['Unnamed: 0', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [仓租]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [入库]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [自发货]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: AAB57--US--TEMU--西邮物流仓储账单--2025.08.01-2025.08.31--初版.xlsx
+    Sheets: ['汇总', '仓库明细', '仓租', '入库', '自发货', '转运', '增值费', '退货物流', '其他操作费用', '物流面单费', '库内索赔费用', '物流索赔费用', '物流补收']
+
+    [汇总]
+      列名: ['Unnamed: 0', '西邮美国海外仓账单汇总', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: ['Unnamed: 0']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [仓库明细]
+      列名: ['Unnamed: 0', '仓库明细费用\n(Warehouse Charges Details)', '月份(Month)', '仓库(Warehouse)', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      数值列: ['Unnamed: 0', '初期账单费用\n(First Bill Amount)', '确认金额\n(Confirm Amount)', '差异\n(Difference)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [仓租]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [入库]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [自发货]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+账单类型判定:
+  类型: A. 月度费用汇总账单（无订单）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L1
+
+======================================================================
+【G7】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\G7
+文件数量: 1
+
+样本文件分析 (取前3个):
+
+  文件: 702510057R -Fee Discrepancy Schedule.xlsx
+    Sheets: ['Sheet1', 'Sheet2', 'Sheet3']
+
+    [Sheet1]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'GROUP7  Billed Quantity and Amount', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'HUPPER  Actual Delivered Quantity and Payable Amount', 'Unnamed: 9', 'Unnamed: 10', 'Unnamed: 11', 'Unnamed: 12', 'Unnamed: 13', 'Unnamed: 14']
+      数值列: ['Unnamed: 17', 'Unnamed: 19', 'Unnamed: 20', 'Unnamed: 21', 'Unnamed: 22']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✗
+      有币种: ✗
+
+    [Sheet2]
+      列名: []
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Sheet3]
+      列名: []
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+账单类型判定:
+  类型: A. 月度费用汇总账单（无订单）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L1
+
+======================================================================
+【1510】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\1510
+文件数量: 16
+
+样本文件分析 (取前3个):
+
+  文件: bill-HBR-M20250401.xlsx
+    Sheets: ['账单封面Bill cover', '充值Deposit', 'B2C订单费用B2C Order Charges', 'B2B订单费用B2B Order Charges', '入库费用Inbound Charges', '仓租费用Storage Charges', '退货费用Returns Charges', '增值费用VAS Charges', '小包快递费用P&EXP Order Charges', '其他费用Other Charges']
+
+    [账单封面Bill cover]
+      列名: ['Unnamed: 0', '壹伍壹拾物流 客户对账单\n1510 Statement for Users', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [充值Deposit]
+      列名: ['<<--业务类型\n(Transfer type)', '单号\n(Transaction No.)', '方式\n(Channel)', '金额\n(Amount)', '币种\n(currency)', '业务发生时间\n(Occurrence time)', '备注\n(Remark)']
+      数值列: ['金额\n(Amount)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2C订单费用B2C Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', '计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)']
+      数值列: ['出库时间\n(Shipping Time)', '计费分区\n(Partition)', '计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2B订单费用B2B Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', 'FNSKU数量\n(FNSKU Quantity)', '箱数量\n(Box Quantity)', '托盘数量\n(Pallets Qty)', '订单操作费\n(Handling Fee)', '装载费\n(Loading Charge)', '尾程运费\n(Rate)']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [入库费用Inbound Charges]
+      列名: ['<<--仓库\n(Warehouse)', '入库单号\n(Order No.)', '参考号\n(Reference NO.)', '运输方式\n(Delivery Method)', '上架完成时间\n(Shelved Time)', '计费时间\n(Billing Time)', '计费数量*单位\n(Quantity * Unit)', '收货费\n(Receipt Fee)', '上架费\n(Putaway Fee)', '分拣费\n(Sorting Fee)', '清点费\n(Counting Fee)', '工时费\n(Labour Fee)', '特殊附加费\n(Special Surcharge)', '自定义费用项\n(custom expense item)', 'VAT税费\n(VAT)']
+      数值列: ['上架完成时间\n(Shelved Time)', '计费数量*单位\n(Quantity * Unit)', '收货费\n(Receipt Fee)', '上架费\n(Putaway Fee)', '分拣费\n(Sorting Fee)', '清点费\n(Counting Fee)', '工时费\n(Labour Fee)', '特殊附加费\n(Special Surcharge)']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: bill-HBR-M20250501.xlsx
+    Sheets: ['账单封面Bill cover', '充值Deposit', 'B2C订单费用B2C Order Charges', 'B2B订单费用B2B Order Charges', '入库费用Inbound Charges', '仓租费用Storage Charges', '退货费用Returns Charges', '增值费用VAS Charges', '小包快递费用P&EXP Order Charges', '其他费用Other Charges']
+
+    [账单封面Bill cover]
+      列名: ['Unnamed: 0', '壹伍壹拾物流 客户对账单\n1510 Statement for Users', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [充值Deposit]
+      列名: ['<<--业务类型\n(Transfer type)', '单号\n(Transaction No.)', '方式\n(Channel)', '金额\n(Amount)', '币种\n(currency)', '业务发生时间\n(Occurrence time)', '备注\n(Remark)']
+      数值列: ['金额\n(Amount)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2C订单费用B2C Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', '计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)']
+      数值列: ['出库时间\n(Shipping Time)', '计费分区\n(Partition)', '计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2B订单费用B2B Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', 'FNSKU数量\n(FNSKU Quantity)', '箱数量\n(Box Quantity)', '托盘数量\n(Pallets Qty)', '订单操作费\n(Handling Fee)', '装载费\n(Loading Charge)', '尾程运费\n(Rate)']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [入库费用Inbound Charges]
+      列名: ['<<--仓库\n(Warehouse)', '入库单号\n(Order No.)', '参考号\n(Reference NO.)', '运输方式\n(Delivery Method)', '上架完成时间\n(Shelved Time)', '计费时间\n(Billing Time)', '计费数量*单位\n(Quantity * Unit)', '收货费\n(Receipt Fee)', '上架费\n(Putaway Fee)', '分拣费\n(Sorting Fee)', '清点费\n(Counting Fee)', '工时费\n(Labour Fee)', '特殊附加费\n(Special Surcharge)', '提货费\n(提货费)', '条码费\n(Labeling)']
+      数值列: ['上架完成时间\n(Shelved Time)', '计费数量*单位\n(Quantity * Unit)', '收货费\n(Receipt Fee)', '上架费\n(Putaway Fee)', '分拣费\n(Sorting Fee)', '清点费\n(Counting Fee)', '工时费\n(Labour Fee)', '特殊附加费\n(Special Surcharge)']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✓
+      有币种: ✓
+
+  文件: bill-HBR-M20250601.xlsx
+    Sheets: ['账单封面Bill cover', '充值Deposit', 'B2C订单费用B2C Order Charges', 'B2B订单费用B2B Order Charges', '入库费用Inbound Charges', '仓租费用Storage Charges', '退货费用Returns Charges', '增值费用VAS Charges', '小包快递费用P&EXP Order Charges', '其他费用Other Charges']
+
+    [账单封面Bill cover]
+      列名: ['Unnamed: 0', '壹伍壹拾物流 客户对账单\n1510 Statement for Users', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [充值Deposit]
+      列名: ['<<--业务类型\n(Transfer type)', '单号\n(Transaction No.)', '方式\n(Channel)', '金额\n(Amount)', '币种\n(currency)', '业务发生时间\n(Occurrence time)', '备注\n(Remark)']
+      数值列: ['金额\n(Amount)', '备注\n(Remark)']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2C订单费用B2C Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', '计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)']
+      数值列: ['计费重量\n(Chargeable weight)', '订单操作费\n(Handling Fee)', '尾程运费\n(Rate)', '燃油附加费\n(Fuel Surcharge)', 'HGV\n(HGV Surcharge)', 'CO2排放费\n(CO2 Emission)', '高速公路费\n(Toll Surcharge)', '包装材料费\n(Packing Material Fee)']
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [B2B订单费用B2B Order Charges]
+      列名: ['<<--仓库\n(Warehouse)', '出库单号\n(Outbound No.)', '参考号\n(Reference NO.)', '跟踪号\n(Tracking No.)', '物流产品\n(Product)', '出库时间\n(Shipping Time)', '计费时间\n(Billing Time)', '邮编\n(Postcode)', '计费分区\n(Partition)', 'FNSKU数量\n(FNSKU Quantity)', '箱数量\n(Box Quantity)', '托盘数量\n(Pallets Qty)', '订单操作费\n(Handling Fee)', '装载费\n(Loading Charge)', '尾程运费\n(Rate)']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✓
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+    [入库费用Inbound Charges]
+      列名: ['<<--仓库\n(Warehouse)', '入库单号\n(Order No.)', '参考号\n(Reference NO.)', '运输方式\n(Delivery Method)', '上架完成时间\n(Shelved Time)', '计费时间\n(Billing Time)', '计费数量*单位\n(Quantity * Unit)', '收货费\n(Receipt Fee)', '上架费\n(Putaway Fee)', '分拣费\n(Sorting Fee)', '清点费\n(Counting Fee)', '工时费\n(Labour Fee)', '特殊附加费\n(Special Surcharge)', 'VAT税费\n(VAT)', '币种\n(Currency)']
+      数值列: []
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✓
+      有币种: ✓
+
+账单类型判定:
+  类型: B. 出库/履约明细账单（含单号）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ⚠️ 可能
+  SKU级匹配: ⚠️ 可能
+
+可解析等级: L3
+
+======================================================================
+【东方嘉盛】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\海外仓账单\东方嘉盛
+文件数量: 16
+
+样本文件分析 (取前3个):
+
+  文件: 账户明细-table-list (18).xlsx
+    Sheets: ['SheetJS']
+
+    [SheetJS]
+      列名: ['ID', '账号', '交易类型', '金额类型', '交易金额', '交易币种', '交易号', '客户订单号', '交易费用名称', '交易汇率', '账户币种', '记账金额', '账户余额', '交易时间', '备注']
+      数值列: ['ID', '交易金额', '交易汇率', '记账金额', '账户余额', '备注']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: 账户明细-table-list (19).xlsx
+    Sheets: ['SheetJS']
+
+    [SheetJS]
+      列名: ['ID', '账号', '交易类型', '金额类型', '交易金额', '交易币种', '交易号', '客户订单号', '交易费用名称', '交易汇率', '账户币种', '记账金额', '账户余额', '交易时间', '备注']
+      数值列: ['ID', '交易金额', '交易汇率', '记账金额', '账户余额', '备注']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+  文件: 账户明细-table-list (20).xlsx
+    Sheets: ['SheetJS']
+
+    [SheetJS]
+      列名: ['ID', '账号', '交易类型', '金额类型', '交易金额', '交易币种', '交易号', '客户订单号', '交易费用名称', '交易汇率', '账户币种', '记账金额', '账户余额', '交易时间', '备注']
+      数值列: ['ID', '交易金额', '交易汇率', '记账金额', '账户余额', '备注']
+      有订单号: ✓
+      有SKU: ✗
+      有金额: ✓
+      有日期: ✓
+      有币种: ✓
+
+账单类型判定:
+  类型: B. 出库/履约明细账单（含单号）
+
+成本可用性裁决:
+  月度成本汇总: ✅
+  订单级匹配: ⚠️ 可能
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L2
+
+======================================================================
+【上海-叶水福】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\上海货盘费用账单\叶水福
+文件数量: 52
+
+样本文件分析 (取前3个):
+
+  文件: HUPPER_Oct2025_invoiceBillReport_YSHUPPER202510.xlsx
+    Sheets: ['Invoice', 'InvoiceBillReport', 'Handling In', 'StorageBilling', 'Handling Out', 'StorageBillingRpt 2', 'StorageBillingRpt 3', 'Customs Clearance With Related', 'VASGW20251009-1011-012', 'VASGW20251009-1011-1012List', 'VASGW20251010-13', 'VASGW20251010-13List']
+
+    [Invoice]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+      数值列: ['Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [InvoiceBillReport]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'INVSH00729']
+      数值列: ['Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Handling In]
+      列名: ['Printed:', datetime.datetime(2025, 11, 3, 10, 18, 19), 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      数值列: [datetime.datetime(2025, 11, 3, 10, 18, 19), 'Unnamed: 2']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [StorageBilling]
+      列名: ['Printed:', 'Unnamed: 1', datetime.datetime(2025, 11, 3, 10, 18, 19), 'Unnamed: 3', 'Unnamed: 4']
+      数值列: ['Unnamed: 1', datetime.datetime(2025, 11, 3, 10, 18, 19)]
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Handling Out]
+      列名: ['Printed:', datetime.datetime(2025, 11, 3, 10, 18, 22), 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      数值列: [datetime.datetime(2025, 11, 3, 10, 18, 22), 'Unnamed: 2']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: HUPPER_Oct 2025_invoiceBillReport_YSHUPPER202510.xlsx
+    Sheets: ['Invoice', 'Transportation Related', 'Freight Related']
+
+    [Invoice]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+      数值列: ['Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Transportation Related]
+      列名: ['TRANSPORTATION BILLING REPORT', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [Freight Related]
+      列名: ['FREIGHT BILLING REPORT', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: 更新准HUPPER_Oct2025_invoiceBillReport_YSHUPPER202510.xlsx
+    Sheets: ['Invoice', 'InvoiceBillReport', 'StorageBillingRpt', 'HandlingBillingReport', 'StorageBillingRpt 2', 'StorageBillingRpt 3', 'Customs Clearance With Related', 'VASGW20250807', 'VASGW20250807List', 'VASGW20250902', 'VASGW20250902List', 'VASGW20250903', 'VASGW20250903List ', 'SF快递']
+
+    [Invoice]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6']
+      数值列: ['Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [InvoiceBillReport]
+      列名: ['Unnamed: 0', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'INVSH00725']
+      数值列: ['Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [StorageBillingRpt]
+      列名: ['Printed:', 'Unnamed: 1', datetime.datetime(2025, 10, 4, 11, 29, 9), 'Unnamed: 3', 'Unnamed: 4']
+      数值列: ['Unnamed: 1', datetime.datetime(2025, 10, 4, 11, 29, 9)]
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [HandlingBillingReport]
+      列名: ['Total Store Rent', datetime.datetime(2025, 10, 4, 11, 29, 11), 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4']
+      数值列: [datetime.datetime(2025, 10, 4, 11, 29, 11), 'Unnamed: 2']
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+    [StorageBillingRpt 2]
+      列名: ['Printed:', 'Unnamed: 1', datetime.datetime(2025, 10, 4, 11, 29, 11), 'Unnamed: 3', 'Unnamed: 4']
+      数值列: ['Unnamed: 1', datetime.datetime(2025, 10, 4, 11, 29, 11)]
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+账单类型判定:
+  类型: D. 混合型账单（需进一步分析）
+
+成本可用性裁决:
+  月度成本汇总: ❌
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L1
+
+======================================================================
+【上海-2024-2025.4账单】
+======================================================================
+路径: d:\app\收入核算系统\data\仓库财务账单\上海货盘费用账单\2024-2025.4账单
+文件数量: 2
+
+样本文件分析 (取前3个):
+
+  文件: 0306-CPI.xlsx
+    Sheets: ['Sales by Customer Detail']
+
+    [Sales by Customer Detail]
+      列名: ['U SPEED LOGISTICS INC', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+  文件: 0321-CPI.xlsx
+    Sheets: ['Sheet1']
+
+    [Sheet1]
+      列名: ['Sales by Customer Detail', 'Unnamed: 1', 'Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4', 'Unnamed: 5', 'Unnamed: 6', 'Unnamed: 7']
+      数值列: []
+      有订单号: ✗
+      有SKU: ✗
+      有金额: ✗
+      有日期: ✗
+      有币种: ✗
+
+账单类型判定:
+  类型: D. 混合型账单（需进一步分析）
+
+成本可用性裁决:
+  月度成本汇总: ❌
+  订单级匹配: ❌ 不支持
+  SKU级匹配: ❌ 不支持
+
+可解析等级: L1
+
+======================================================================

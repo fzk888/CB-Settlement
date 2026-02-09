@@ -1,0 +1,70 @@
+======================================================================
+SKU 匹配性分析报告
+======================================================================
+
+【1. 仓库产品数据 - SKU 格式】
+产品总数: 1244
+SKU 样本 (前15):
+  BOX-4
+  BOX-3
+  BOX-2
+  BOX-1
+  B08172K1YF+GMQV
+  X0023PXQSJ
+  B083RHC9XL2
+  B0D8J4BJ39
+  B0DCJKHJDK
+  B01B3MW7CC-2
+  B0744XB3T5Q
+  B01E3HRVS
+  B0CJ5S3HHF
+  B07RQ87PM7
+  B08172K1YF-60
+
+类似 ASIN 格式的 SKU: 1170 个
+  样本: ['B0D8J4BJ39', 'B0DCJKHJDK', 'B0CJ5S3HHF', 'B07RQ87PM7', 'B079QY5HCH']
+
+【2. 亚马逊交易数据 - 列结构】
+CSV 文件数: 84
+
+样本文件: 10-de 2025OctMonthlyTransaction.csv
+列名:
+  - Einschließlich Transaktionen zu Amazon Marketplace, Versand durch Amazon und Amazon Webstore
+
+❌ 亚马逊交易数据中无 SKU/ASIN 列
+   说明: 亚马逊月度交易报告是财务汇总级别，不含订单明细
+
+======================================================================
+【结论】
+======================================================================
+亚马逊交易数据 (Monthly Transaction) 是财务级汇总，字段包括:
+  - date/time, settlement id, type, order id
+  - product sales, fees, total
+  ⚠️ 无 SKU/ASIN 字段
+
+仓库产品数据包含:
+  - 产品SKU, 产品名称, 对应单价(USD)
+  - 部分 SKU 与 ASIN 格式相似 (B0xxxxxxxx)
+
+匹配可行性:
+  ✅ 仓库账单 (TSP/1510) 有订单号 → 可与亚马逊 order_id 关联
+  ⚠️ 但需额外的 订单明细数据 才能获取 SKU → 产品成本
+
+关键发现
+仓库账单中的订单号 ≠ 亚马逊 order_id
+
+仓库账单中的订单号格式：
+
+ST-PO-xxx → Temu 平台訂单
+shein-xxx → SHEIN 平台订单
+FBAxxxx → 亚马逊 FBA 发货编号（非 order_id）
+HUP-xxx, UK25xxx → 仓库内部编号
+亚马逊 order_id 格式：
+
+xxx-xxxxxxx-xxxxxxx (如 408-1234567-1234567)
+结论
+匹配场景	可行性
+仓库账单 → 亚马逊 order_id	❌ 不可直接匹配
+仓库账单 → SHEIN/Temu order_id	✅ 可以匹配
+仓库月度总成本	✅ 可以汇总
+原因：这些海外仓主要发 SHEIN/Temu 的货，不是直接发亚马逊FBA。

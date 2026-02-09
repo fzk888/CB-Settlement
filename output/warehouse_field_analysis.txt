@@ -1,0 +1,126 @@
+======================================================================
+Phase 2.1 仓库账单字段分析报告
+======================================================================
+
+============================================================
+【TSP仓库 (英国)】
+============================================================
+文件: Invoice - HupperTek Jul25 Wk1 - 08_07_2025 14_47_37.xlsx
+Sheets: ['Additional Invoice Items', 'Invoice Items', 'Invoiced Collections', 'Invoiced Returns', 'Invoiced GoodIns Items']
+列数: 8, 行数: 9
+
+列名列表:
+  1. Client
+  2. Invoice Date
+  3. Invoice Item Type
+  4. Charge Type
+  5. Cost
+  6. Comments
+  7. Added By
+  8. Last Updated By User
+
+数值列(可能是金额): ['Cost']
+
+前2行数据样本:
+  Row 0: {'Client': 'HUPPERTEK', 'Invoice Date': Timestamp('2025-07-01 22:30:27.363000'), 'Invoice Item Type': 'Account Management Fee', 'Charge Type': 'Generic', 'Cost': 7.14, 'Comments': ' '}
+  Row 1: {'Client': 'HUPPERTEK', 'Invoice Date': Timestamp('2025-07-02 22:30:21.007000'), 'Invoice Item Type': 'Account Management Fee', 'Charge Type': 'Generic', 'Cost': 7.14, 'Comments': ' '}
+
+============================================================
+【京东海外仓】
+============================================================
+文件: 费用明细_16d11318-746b-438c-a378-dd14e64aec93_1747498685700.xlsx
+Sheets: ['汇总页', '费用明细_1']
+列数: 14, 行数: 43
+
+列名列表:
+  1.  
+  2. Unnamed: 1
+  3. Unnamed: 2
+  4. Unnamed: 3
+  5. Unnamed: 4
+  6. Unnamed: 5
+  7. Unnamed: 6
+  8. Unnamed: 7
+  9. Unnamed: 8
+  10. Unnamed: 9
+  11. Unnamed: 10
+  12. Unnamed: 11
+  13. Unnamed: 12
+  14. Unnamed: 13
+
+数值列(可能是金额): [' ']
+
+前2行数据样本:
+  Row 0: {' ': nan, 'Unnamed: 1': nan, 'Unnamed: 2': nan, 'Unnamed: 3': '京 东 国 际 物 流 账 单 明 细\nJDL LOGISTICS BILLING', 'Unnamed: 4': nan, 'Unnamed: 5': nan}
+  Row 1: {' ': nan, 'Unnamed: 1': nan, 'Unnamed: 2': nan, 'Unnamed: 3': nan, 'Unnamed: 4': nan, 'Unnamed: 5': nan}
+
+============================================================
+【LHZ仓库】
+============================================================
+文件: 开票费用明细 05-2025 HUP xlsx.xlsx
+Sheets: ['开票费用明细', '入库费用', '订单出库费用', 'FBA包裹出库', 'DPD 额外费用']
+列数: 4, 行数: 11
+
+列名列表:
+  1. 开票费用明细：HUP-Hupper
+  2. Unnamed: 1
+  3. Unnamed: 2
+  4. Unnamed: 3
+
+前2行数据样本:
+  Row 0: {'开票费用明细：HUP-Hupper': '（2025年5月01日 ~ 2025年5月31日）', 'Unnamed: 1': nan, 'Unnamed: 2': nan, 'Unnamed: 3': nan}
+  Row 1: {'开票费用明细：HUP-Hupper': '类别', 'Unnamed: 1': 'Bezeichnung', 'Unnamed: 2': '金额', 'Unnamed: 3': '备注'}
+
+============================================================
+【海洋仓库】
+============================================================
+文件: 2025-7月_CostBillExport1599.xlsx
+Sheets: ['CostBill', 'CostBill (2)']
+列数: 18, 行数: 311
+
+列名列表:
+  1. NO
+  2. 单号
+  3. 参考号
+  4. 跟踪号
+  5. 状态
+  6. 核销状态
+  7. 业务类型
+  8. 运输方式
+  9. 费用类型
+  10. 仓库
+  11. 结算金额
+  12. 结算币种
+  13. 计费规则金额
+  14. 计费规则币种
+  15. 计费重
+  ... (共18列)
+
+数值列(可能是金额): ['NO', '核销状态', '结算金额', '计费规则金额', '计费重', '备注']
+
+前2行数据样本:
+  Row 0: {'NO': 1, '单号': 'WTHTCL-1-20250731', '参考号': nan, '跟踪号': nan, '状态': '未核账', '核销状态': nan}
+  Row 1: {'NO': 2, '单号': 'WTHTCL-1-20250730', '参考号': nan, '跟踪号': nan, '状态': '未核账', '核销状态': nan}
+
+============================================================
+【西邮仓库 (美国-TEMU)】
+============================================================
+文件: AAB57--US--TEMU--西邮物流仓储账单--2025.07.01-2025.07.31--初版.xlsx
+Sheets: ['汇总', '仓库明细', '仓租', '入库', '自发货']
+列数: 6, 行数: 41
+
+列名列表:
+  1. Unnamed: 0
+  2. 西邮美国海外仓账单汇总
+  3. Unnamed: 2
+  4. Unnamed: 3
+  5. Unnamed: 4
+  6. Unnamed: 5
+
+数值列(可能是金额): ['Unnamed: 0']
+
+前2行数据样本:
+  Row 0: {'Unnamed: 0': nan, '西邮美国海外仓账单汇总': '客户代码(Customer Code)', 'Unnamed: 2': 'AAB57', 'Unnamed: 3': nan, 'Unnamed: 4': nan, 'Unnamed: 5': nan}
+  Row 1: {'Unnamed: 0': nan, '西邮美国海外仓账单汇总': '费用开始日期(Start Date)', 'Unnamed: 2': '2025.07.01', 'Unnamed: 3': '费用结束日期(End Date)', 'Unnamed: 4': '2025.07.31', 'Unnamed: 5': '币种(USD)'}
+
+======================================================================
