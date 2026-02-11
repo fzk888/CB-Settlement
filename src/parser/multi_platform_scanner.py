@@ -68,8 +68,11 @@ class MultiPlatformScanner:
             return 'amazon', store_name, year_month
         
         # Temu
-        if 'funddetail' in filename_lower and filename.endswith('.xlsx'):
-            store_name = self._extract_before(filename, 'FundDetail')
+        # 支持两种命名方式：FundDetail 和 Detail（某些月份可能使用Detail）
+        if (('funddetail' in filename_lower or ' detail' in filename_lower) 
+            and filename.endswith('.xlsx')
+            and self._is_temu_detail_file(filename)):
+            store_name = self._extract_before_temu(filename)
             year_month = self._extract_month_from_folder(folder_name)
             return 'temu', store_name, year_month
         
@@ -120,6 +123,54 @@ class MultiPlatformScanner:
             store_name = filename.split('.')[0]
         
         return store_name, year_month
+    
+    def _is_temu_detail_file(self, filename: str) -> bool:
+        """
+        判断是否为TEMU的Detail文件
+        排除其他平台可能使用Detail命名的文件
+        """
+        filename_lower = filename.lower()
+        
+        # 如果包含funddetail，肯定是TEMU文件
+        if 'funddetail' in filename_lower:
+            return True
+            
+        # 如果是Detail结尾，需要进一步确认是TEMU文件
+        # 检查文件名中是否包含TEMU相关的特征
+        temu_indicators = [
+            ' funddetail',  # 标准格式
+            ' detail-',     # Detail后跟数字标识符
+            ' detail.',     # Detail后跟文件扩展名
+        ]
+        
+        for indicator in temu_indicators:
+            if indicator in filename_lower:
+                return True
+                
+        return False
+    
+    def _extract_before_temu(self, filename: str) -> str:
+        """
+        从TEMU文件名中提取店铺名
+        支持FundDetail和Detail两种格式
+        """
+        import re
+        
+        # 先尝试标准的FundDetail格式
+        store_name = self._extract_before(filename, 'FundDetail')
+        if store_name != filename.split('.')[0]:
+            # 清理可能包含的月份信息
+            store_name = re.sub(r'\s*\d+月\s*$', '', store_name).strip()
+            return store_name
+            
+        # 再尝试Detail格式
+        store_name = self._extract_before(filename, 'Detail')
+        if store_name != filename.split('.')[0]:
+            # 清理可能包含的月份信息
+            store_name = re.sub(r'\s*\d+月\s*$', '', store_name).strip()
+            return store_name
+            
+        return filename.split('.')[0]
     
     def _extract_before(self, filename: str, marker: str) -> str:
         """提取标记之前的内容"""

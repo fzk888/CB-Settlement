@@ -209,7 +209,7 @@ class AmazonCSVParser(BaseParser):
             if not content:
                 result.errors.append("文件为空或无法读取")
                 return result
-            
+
             # 检测表头行和语言
             header_idx, lang = self._detect_header_and_lang(content)
             
@@ -217,17 +217,55 @@ class AmazonCSVParser(BaseParser):
                 result.errors.append("未找到有效表头行 (支持 En/De/Fr/Jp)")
                 return result
             
-            # 解析店铺信息
+            # 解析店铺信息：文件名优先；仅当文件名未包含站点时，才用正文中的币种说明
             store_info = StoreInfo.from_filename(path.name)
+            if not store_info.marketplace:
+                inferred_from_content = self._infer_currency_and_site_from_content(content)
+                if inferred_from_content:
+                    store_info.currency = inferred_from_content['currency']
+                    store_info.marketplace = inferred_from_content.get('marketplace', '') or store_info.marketplace
+                    store_info.store_id = f"{store_info.store_name}_{store_info.marketplace}".lower().replace(' ', '_') if store_info.marketplace else store_info.store_id
+            # 若仍未得到站点，根据语言推断默认站点/币种：
+            # - de: 视为 DE/EUR
+            # - fr: 视为 FR/EUR
+            # - jp: 视为 JP/JPY
+            # - en 且无站点: 视为 US/USD（英国通常文件名会带 UK）
+            if not store_info.marketplace:
+                if lang == 'de':
+                    store_info.marketplace = 'DE'
+                    store_info.currency = 'EUR'
+                elif lang == 'fr':
+                    store_info.marketplace = 'FR'
+                    store_info.currency = 'EUR'
+                elif lang == 'jp':
+                    store_info.marketplace = 'JP'
+                    store_info.currency = 'JPY'
+                else:  # 'en' 或未知
+                    store_info.marketplace = 'US'
+                    store_info.currency = 'USD'
             result.store_id = store_info.store_id
             result.store_name = store_info.store_name
             result.platform = store_info.platform
             result.marketplace = store_info.marketplace
             result.currency = store_info.currency
-            
-            # 解析CSV
+
             lines = content.split('\n')
             csv_content = '\n'.join(lines[header_idx:])
+
+            # 若文件名中无站点（如 2025AprMonthlyUnifiedTransaction），尝试从 CSV 表头/首行推断币种与站点
+            if not store_info.marketplace or store_info.currency == 'USD':
+                inferred = self._infer_currency_and_marketplace_from_csv(csv_content)
+                if inferred.get('currency'):
+                    result.currency = store_info.currency = inferred['currency']
+                if inferred.get('marketplace'):
+                    result.marketplace = store_info.marketplace = inferred['marketplace']
+                    store_info = StoreInfo(
+                        store_id=f"{store_info.store_name}_{store_info.marketplace}".lower().replace(' ', '_'),
+                        store_name=store_info.store_name,
+                        platform=store_info.platform,
+                        marketplace=store_info.marketplace,
+                        currency=store_info.currency,
+                    )
             
             transactions, stats, errors = self._parse_csv(
                 csv_content, store_info, path.name, lang
@@ -273,6 +311,68 @@ class AmazonCSVParser(BaseParser):
             except (UnicodeDecodeError, LookupError):
                 continue
         return ""
+
+    # 正文中“写明币种”时，币种对应的默认站点（与 StoreInfo.CURRENCY_MAP 一致）
+    _CONTENT_CURRENCY_TO_SITE = {
+        'GBP': 'UK', 'USD': 'US', 'EUR': 'DE', 'CAD': 'CA', 'JPY': 'JP', 'AUD': 'AU',
+    }
+
+    def _infer_currency_and_site_from_content(self, content: str) -> dict:
+        """从文件正文中识别“写明币种”的说明，返回该币种及对应站点（通用，不针对某一种币种）。"""
+        if not content:
+            return {}
+        text_lower = content[:8000].lower()  # 只扫前一段，避免大文件过慢
+        # 英文: "All amounts in GBP, unless specified" / "all amounts in EUR"
+        # 德文等也可能有类似表述，用同一正则匹配 XXX 为已知币种代码即可
+        match = re.search(
+            r'all\s+amounts\s+in\s+(GBP|EUR|USD|CAD|JPY|AUD)\b',
+            text_lower,
+            re.IGNORECASE,
+        )
+        if not match:
+            return {}
+        currency = match.group(1).upper()
+        site = self._CONTENT_CURRENCY_TO_SITE.get(currency, '')
+        return {'currency': currency, 'marketplace': site}
+
+    def _infer_currency_and_marketplace_from_csv(self, csv_content: str) -> dict:
+        """当文件名中无站点时，从 CSV 表头与首行推断币种（及若可能则站点）。"""
+        out = {}
+        try:
+            reader = csv.DictReader(io.StringIO(csv_content))
+            if not reader.fieldnames:
+                return out
+            fieldnames_lower = {f.strip().lower(): f for f in reader.fieldnames}
+            # 找“币种”列：英文 currency，德文 währung，法文 devise 等
+            currency_col = None
+            for key in fieldnames_lower:
+                if 'currency' in key or 'währung' in key or 'devise' in key or '通貨' in key or 'currency code' in key:
+                    currency_col = fieldnames_lower[key]
+                    break
+            if currency_col:
+                row = next(reader, None)
+                if row and row.get(currency_col, '').strip():
+                    raw = row.get(currency_col, '').strip().upper()
+                    if raw in ('USD', 'GBP', 'EUR', 'CAD', 'JPY', 'AUD'):
+                        out['currency'] = raw
+            # 若存在 settlement id 列，尝试从首行值推断站点（如 123-UK-456 或 UK-123）
+            settlement_col = None
+            for key in fieldnames_lower:
+                if 'settlement' in key and 'id' in key:
+                    settlement_col = fieldnames_lower[key]
+                    break
+            if settlement_col and not out.get('marketplace'):
+                reader2 = csv.DictReader(io.StringIO(csv_content))
+                row = next(reader2, None)
+                if row:
+                    val = (row.get(settlement_col) or '').upper()
+                    for code in ('UK', 'DE', 'US', 'CA', 'FR', 'IT', 'ES', 'JP', 'AU'):
+                        if code in val or val.startswith(code + '-') or val.startswith(code + '_'):
+                            out['marketplace'] = code
+                            break
+        except Exception:
+            pass
+        return out
     
     def _parse_csv(
         self, 

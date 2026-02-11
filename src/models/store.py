@@ -23,35 +23,57 @@ class StoreInfo:
     marketplace: str = ""  # UK, DE, US等
     currency: str = ""
     
+    # 站点 -> 币种
+    CURRENCY_MAP = {
+        'UK': 'GBP',
+        'DE': 'EUR', 'FR': 'EUR', 'IT': 'EUR', 'ES': 'EUR',
+        'US': 'USD', 'CA': 'CAD',
+        'JP': 'JPY', 'AU': 'AUD',
+    }
+
     @classmethod
     def from_filename(cls, filename: str) -> 'StoreInfo':
-        """从文件名解析店铺信息"""
-        # 示例: 智能万物店铺10_UK 2025NovMonthlyTransaction.csv
+        """从文件名解析店铺信息（站点、币种）。
+
+        支持格式:
+        - 店铺名-站点 / 店铺名_站点: 4-DE2025Jul..., 账号4-uk 2025..., 智能万物店铺10_UK 2025Nov...
+        - 站点-店铺名 / 站点 店铺名: UK 2025Apr..., DE_2025Apr...
+        """
         import re
-        
-        store_name = ""
+
+        base = filename.split('.')[0]
+        store_name = base
         marketplace = ""
-        
-        # 尝试匹配 店铺名_市场 格式
-        match = re.match(r'(.+?)[-_]?(UK|DE|US|CA|FR|IT|ES|JP|AU)', filename, re.IGNORECASE)
+
+        # 1) 店铺名在前、站点在后：(.+?)[-_\s]*(UK|DE|US|...)，允许中间有空格（如 账号12 de 2025）
+        match = re.match(
+            r'^(.+?)[-_\s]+(UK|DE|US|CA|FR|IT|ES|JP|AU)(?:\s|_|-|\d|$)',
+            base,
+            re.IGNORECASE,
+        )
         if match:
             store_name = match.group(1).strip()
             marketplace = match.group(2).upper()
         else:
-            store_name = filename.split('.')[0]
-        
-        # 生成store_id
-        store_id = f"{store_name}_{marketplace}".lower().replace(' ', '_')
-        
-        # 推断货币
-        currency_map = {
-            'UK': 'GBP',
-            'DE': 'EUR', 'FR': 'EUR', 'IT': 'EUR', 'ES': 'EUR',
-            'US': 'USD', 'CA': 'CAD',
-            'JP': 'JPY', 'AU': 'AUD',
-        }
-        currency = currency_map.get(marketplace, 'USD')
-        
+            # 2) 站点在前、店铺名在后：UK 2025Apr..., DE_2025Apr...
+            match2 = re.match(
+                r'^(UK|DE|US|CA|FR|IT|ES|JP|AU)[-_\s]+(.+)$',
+                base,
+                re.IGNORECASE,
+            )
+            if match2:
+                marketplace = match2.group(1).upper()
+                store_name = match2.group(2).strip()
+            else:
+                # 3) 无显式站点且是 MonthlyUnifiedTransaction，默认视为北美 US 账单
+                #    示例: 2025AprMonthlyUnifiedTransaction.csv
+                unified_pat = r'\d{4}(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)MonthlyUnifiedTransaction'
+                if re.search(unified_pat, base, re.IGNORECASE):
+                    marketplace = "US"
+
+        store_id = f"{store_name}_{marketplace}".lower().replace(' ', '_') if marketplace else store_name.lower().replace(' ', '_')
+        currency = cls.CURRENCY_MAP.get(marketplace, 'USD')
+
         return cls(
             store_id=store_id,
             store_name=store_name,

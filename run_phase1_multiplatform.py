@@ -101,7 +101,8 @@ def run_phase1_multiplatform():
                 
                 store_name = meta.get('store_name', pf.store_name)
                 currency = meta.get('currency', 'USD')
-                year_month = meta.get('year_month', pf.year_month)
+                # 解析器未解析出月份时（如日期列为空），用扫描器从文件夹得到的月份
+                year_month = meta.get('year_month') or pf.year_month
                 site = meta.get('site', '')
                 
                 results.append({
@@ -154,11 +155,22 @@ def run_phase1_multiplatform():
         df_output.columns = ['平台', '店铺', '站点', '月份', '币种', 
                              '交易数', '参与计算', '平台净结算', '提现金额']
         
-        with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
-            df_output.to_excel(writer, sheet_name='详细数据', index=False)
-            summary.to_excel(writer, sheet_name='平台汇总', index=False)
+        # 如果主输出文件被占用（例如已在 Excel 中打开），
+        # 自动退回到带后缀的备份文件，避免整个流程报错中断。
+        try:
+            with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
+                df_output.to_excel(writer, sheet_name='详细数据', index=False)
+                summary.to_excel(writer, sheet_name='平台汇总', index=False)
+            final_path = output_path
+        except PermissionError:
+            backup_path = r'd:\app\收入核算系统\output\月度核算报表_Phase1_多平台_auto.xlsx'
+            with pd.ExcelWriter(backup_path, engine='xlsxwriter') as writer:
+                df_output.to_excel(writer, sheet_name='详细数据', index=False)
+                summary.to_excel(writer, sheet_name='平台汇总', index=False)
+            final_path = backup_path
+            print(f"\n注意：原始报表文件被占用，已自动写入备份文件: {backup_path}")
         
-        print(f"\n报表已生成: {output_path}")
+        print(f"\n报表已生成: {final_path}")
     
     print("=" * 70)
 
