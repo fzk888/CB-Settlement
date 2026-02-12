@@ -67,7 +67,7 @@ def run_phase2():
     # === 2. 仓库履约成本汇总 ===
     print("\n[2] 汇总仓库履约成本...")
     
-    warehouses = ['TSP', '1510', '京东', '海洋', 'LHZ', '奥韵汇', '东方嘉盛']
+    warehouses = ['TSP', '1510', '京东', '海洋', 'LHZ', '奥韵汇', '东方嘉盛', 'G7']
     warehouse_costs = aggregate_warehouse_costs(str(warehouse_data_path), warehouses)
     
     print(f"  共解析 {len(warehouse_costs)} 条仓库月度记录")
@@ -101,7 +101,7 @@ def run_phase2():
                 warehouse_rows.append({
                     '月份': c.year_month,
                     '仓库': c.warehouse_name,
-                    '区域': {'TSP': 'UK', '1510': 'UK', '京东': 'Global', '海洋': 'UK', 'LHZ': 'DE', '奥韵汇': 'DE', '东方嘉盛': 'CN'}.get(c.warehouse_name, '-'),
+                    '区域': {'TSP': 'UK', '1510': 'UK', '京东': 'Global', '海洋': 'UK', 'LHZ': 'DE', '奥韵汇': 'DE', '东方嘉盛': 'CN', 'G7': 'DE'}.get(c.warehouse_name, '-'),
                     '履约成本合计': float(c.total_cost),
                     '币种': c.currency,
                     '记录数': c.record_count,
